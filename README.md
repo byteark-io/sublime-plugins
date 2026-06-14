@@ -71,7 +71,7 @@ original. Works with multiple selections. With an empty selection it uses the wo
 under the caret. Changing the selection restarts the cycle.
 
 ### Hotkey
-Default: `Ctrl+Shift+M` (editable in `CaseCycle/Default (Windows).sublime-keymap`)
+Default: `Ctrl+Shift+O` (editable in `CaseCycle/Default (Windows).sublime-keymap`)
 
 ### Command Palette
 - **Case: Cycle (UPPER / lower / camelCase / PascalCase / original)**

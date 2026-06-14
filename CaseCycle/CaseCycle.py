@@ -7,7 +7,7 @@ Press the hotkey repeatedly to cycle the selected text through:
 The original text is remembered, so camelCase conversions are not lossy across
 the cycle. If you change the selection, the cycle restarts from that text.
 
-Default hotkey: Ctrl+Shift+M  (see Default (Windows).sublime-keymap)
+Default hotkey: Ctrl+Shift+O  (see Default (Windows).sublime-keymap)
 Command: cycle_case
 """
 
