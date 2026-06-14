@@ -35,6 +35,24 @@ def _cap(word):
     return word[:1].upper() + word[1:].lower() if word else word
 
 
+def _camel_line(line, lower_first):
+    words = split_words(line)
+    if not words:
+        return line
+    if lower_first:
+        return words[0].lower() + "".join(_cap(w) for w in words[1:])
+    return "".join(_cap(w) for w in words)
+
+
+def _apply_per_line(text, fn):
+    """Apply fn to each line's content while keeping the original line breaks."""
+    parts = re.split(r"(\r\n|\r|\n)", text)
+    out = []
+    for i, p in enumerate(parts):
+        out.append(p if (i % 2) else fn(p))
+    return "".join(out)
+
+
 def transform(text, style):
     if style == "original":
         return text
@@ -42,13 +60,10 @@ def transform(text, style):
         return text.upper()
     if style == "lower":
         return text.lower()
-    words = split_words(text)
-    if not words:
-        return text
     if style == "lower_camel":
-        return words[0].lower() + "".join(_cap(w) for w in words[1:])
+        return _apply_per_line(text, lambda ln: _camel_line(ln, True))
     if style == "upper_camel":
-        return "".join(_cap(w) for w in words)
+        return _apply_per_line(text, lambda ln: _camel_line(ln, False))
     return text
 
 
