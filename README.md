@@ -31,7 +31,7 @@ Default pattern: `note-%Y-%m-%d-###` → `note-2026-06-14-001.txt`
 
 ### Installation
 
-Copy the `AutoFile/` files into your Sublime Text **Packages** folder:
+Copy the `AutoFile/` folder into your Sublime Text **Packages** directory:
 
 | Platform | Path |
 |----------|------|
@@ -39,7 +39,17 @@ Copy the `AutoFile/` files into your Sublime Text **Packages** folder:
 | Windows  | `%APPDATA%\Sublime Text\Packages\AutoFile\` |
 | Linux    | `~/.config/sublime-text/Packages/AutoFile/` |
 
-Files to copy:
+**macOS (terminal):**
+```bash
+cp -R AutoFile/ ~/Library/Application\ Support/Sublime\ Text/Packages/AutoFile/
+```
+
+**Windows (cmd):**
+```cmd
+xcopy /E /I AutoFile "%APPDATA%\Sublime Text\Packages\AutoFile"
+```
+
+Files installed:
 - `AutoFile.py`
 - `AutoFile.sublime-settings`
 - `AutoFile.sublime-commands`
@@ -81,13 +91,23 @@ under the caret.
 
 ### Installation
 
-Copy the `CaseCycle/` folder into your Sublime `Packages` directory:
+Copy the `CaseCycle/` folder into your Sublime Text **Packages** directory:
 
 | Platform | Path |
 |----------|------|
 | macOS    | `~/Library/Application Support/Sublime Text/Packages/CaseCycle/` |
 | Windows  | `%APPDATA%\Sublime Text\Packages\CaseCycle\` |
 | Linux    | `~/.config/sublime-text/Packages/CaseCycle/` |
+
+**macOS (terminal):**
+```bash
+cp -R CaseCycle/ ~/Library/Application\ Support/Sublime\ Text/Packages/CaseCycle/
+```
+
+**Windows (cmd):**
+```cmd
+xcopy /E /I CaseCycle "%APPDATA%\Sublime Text\Packages\CaseCycle"
+```
 
 ### Command Palette
 - **Case: Cycle (UPPER / lower / Title / Sentence / camelCase / PascalCase / original)**
