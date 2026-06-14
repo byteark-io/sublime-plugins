@@ -15,7 +15,7 @@ import sublime
 import sublime_plugin
 import re
 
-CYCLE = ["upper", "lower", "lower_camel", "upper_camel", "original"]
+CYCLE = ["upper", "lower", "title", "sentence", "lower_camel", "upper_camel", "original"]
 
 # Per-view state: { view_id: {"regions": [(a,b),...], "originals": [...], "index": n} }
 _state = {}
@@ -53,6 +53,39 @@ def _apply_per_line(text, fn):
     return "".join(out)
 
 
+def title_case(text):
+    """Capitalize the first letter of every word; preserves spaces/newlines."""
+    res = []
+    cap_next = True
+    for ch in text:
+        if ch.isalnum():
+            res.append(ch.upper() if cap_next else ch.lower())
+            cap_next = False
+        else:
+            res.append(ch)
+            cap_next = True  # any separator starts a new word
+    return "".join(res)
+
+
+def sentence_case(text):
+    """Capitalize the first letter of each sentence; preserves spaces/newlines."""
+    res = []
+    cap_next = True
+    for ch in text:
+        if ch.isalpha():
+            res.append(ch.upper() if cap_next else ch.lower())
+            cap_next = False
+        else:
+            res.append(ch)
+            if ch in ".!?\n":
+                cap_next = True
+            elif ch in " \t\r":
+                pass  # keep pending capitalization through whitespace
+            else:
+                cap_next = False
+    return "".join(res)
+
+
 def transform(text, style):
     if style == "original":
         return text
@@ -60,6 +93,10 @@ def transform(text, style):
         return text.upper()
     if style == "lower":
         return text.lower()
+    if style == "title":
+        return title_case(text)
+    if style == "sentence":
+        return sentence_case(text)
     if style == "lower_camel":
         return _apply_per_line(text, lambda ln: _camel_line(ln, True))
     if style == "upper_camel":
