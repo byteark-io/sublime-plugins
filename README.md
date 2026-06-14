@@ -58,3 +58,26 @@ Leave `working_folder` empty to use `<home>\AutoFile`.
 - **AutoFile: New Auto-Named File**
 - **AutoFile: Toggle Auto-Create on New File**
 - **AutoFile: Open Settings**
+
+## CaseCycle
+
+Cycle the selected text through case styles with a single hotkey. Each press
+advances to the next style:
+
+`UPPERCASE` -> `lowercase` -> `lowerCamelCase` -> `UpperCamelCase` -> `original`
+
+The original text is remembered, so repeated presses always return to the exact
+original. Works with multiple selections. With an empty selection it uses the word
+under the caret. Changing the selection restarts the cycle.
+
+### Hotkey
+Default: `Alt+Shift+C` (editable in `CaseCycle/Default (Windows).sublime-keymap`)
+
+### Command Palette
+- **Case: Cycle (UPPER / lower / camelCase / PascalCase / original)**
+
+### Installation
+Copy the `CaseCycle/` folder into your Sublime `Packages` directory
+(it is its own package, so its keymap won't clash with your User keymap):
+- Standard: `%APPDATA%\Sublime Text\Packages\CaseCycle`
+- Portable: `<Sublime Text>\Data\Packages\CaseCycle`
