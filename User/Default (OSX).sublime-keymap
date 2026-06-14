@@ -1,3 +1,31 @@
 [
-    { "keys": ["super+shift+c"], "command": "copy" }
+    // Move line up/down — Windows: Ctrl+Shift+Up/Down
+    { "keys": ["ctrl+shift+up"], "command": "swap_line_up" },
+    { "keys": ["ctrl+shift+down"], "command": "swap_line_down" },
+
+    // Join lines — Windows: Ctrl+Shift+J
+    { "keys": ["ctrl+shift+j"], "command": "join_lines" },
+
+    // Split selection into lines — Windows: Ctrl+Shift+L
+    { "keys": ["ctrl+shift+l"], "command": "split_selection_into_lines" },
+
+    // Expand selection — Windows: Ctrl+Shift+Space
+    { "keys": ["ctrl+shift+space"], "command": "expand_selection", "args": {"to": "scope"} },
+
+    // Multi-cursor up/down — Windows: Ctrl+Alt+Up/Down
+    { "keys": ["ctrl+alt+up"], "command": "select_lines", "args": {"forward": false} },
+    { "keys": ["ctrl+alt+down"], "command": "select_lines", "args": {"forward": true} },
+
+    // Replace next — Windows: Ctrl+Shift+H
+    { "keys": ["ctrl+shift+h"], "command": "replace_next" },
+
+    // Fold/unfold — Windows: Ctrl+Shift+[ / ]
+    { "keys": ["ctrl+shift+["], "command": "fold" },
+    { "keys": ["ctrl+shift+]"], "command": "unfold" },
+
+    // Reopen closed tab — Windows: Ctrl+Shift+T
+    { "keys": ["ctrl+shift+t"], "command": "reopen_last_file" },
+
+    // Duplicate line — Windows: Ctrl+Shift+D
+    { "keys": ["ctrl+shift+d"], "command": "duplicate_line" }
 ]
