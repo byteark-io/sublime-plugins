@@ -1,34 +1,34 @@
 # Sublime Text - Quick Keys
 
 ### Lines
-| Key | Action |
-|-----|--------|
-| `Ctrl+Shift+Up` / `Down` | Move line up / down |
-| `Ctrl+Shift+D` | Duplicate line |
-| `Ctrl+Shift+J` | Join lines |
-| `Ctrl+Shift+L` | Split selection into lines |
+| Mac | Windows | Action |
+|-----|---------|--------|
+| `⌘+Ctrl+Up/Down` | `Ctrl+Shift+Up/Down` | Move line up / down |
+| `⌘+Shift+D` | `Ctrl+Shift+D` | Duplicate line |
+| `⌘+J` | `Ctrl+Shift+J` | Join lines |
+| `⌘+Shift+L` | `Ctrl+Shift+L` | Split selection into lines |
 
 ### Selection
-| Key | Action |
-|-----|--------|
-| `Ctrl+Shift+Space` | Expand selection |
-| `Ctrl+Alt+Up` / `Down` | Add cursor on line above / below |
+| Mac | Windows | Action |
+|-----|---------|--------|
+| `⌘+Shift+Space` | `Ctrl+Shift+Space` | Expand selection |
+| `Ctrl+Shift+Up/Down` | `Ctrl+Alt+Up/Down` | Add cursor on line above / below |
 
 ### Editing
-| Key | Action |
-|-----|--------|
-| `Ctrl+Shift+H` | Replace next |
-| `Ctrl+Shift+[` / `]` | Fold / unfold |
-| `Ctrl+Shift+T` | Reopen closed tab |
+| Mac | Windows | Action |
+|-----|---------|--------|
+| `⌥+⌘+F` | `Ctrl+Shift+H` | Replace next |
+| `⌘+⌥+[` / `]` | `Ctrl+Shift+[` / `]` | Fold / unfold |
+| `⌘+Shift+T` | `Ctrl+Shift+T` | Reopen closed tab |
 
 ### Block (column) select - mouse
-| Action | Result |
-|--------|--------|
-| `Alt+Shift` + drag | Block select |
-| Block + `Alt` drag | Move block |
-| Block + `Ctrl` drag | Copy block |
+| Mac | Windows | Action |
+|-----|---------|--------|
+| `⌥` + drag | `Alt+Shift` + drag | Block select |
+| Block + `⌥` drag | Block + `Alt` drag | Move block |
+| Block + `⌘` drag | Block + `Ctrl` drag | Copy block |
 
-### Custom plugin
-| Key | Action |
-|-----|--------|
-| `Ctrl+Shift+M` | CaseCycle: cycle text case |
+### Custom plugins
+| Mac | Windows | Action |
+|-----|---------|--------|
+| `⌘+Shift+M` | `Ctrl+Shift+M` | CaseCycle: cycle text case |

@@ -1,18 +1,17 @@
 # Sublime Text Plugins
 
-Custom plugins for [Sublime Text](https://www.sublimetext.com/).
+Custom plugins for [Sublime Text](https://www.sublimetext.com/).  
+Cross-platform: works on Windows, macOS, and Linux.
 
 ## AutoFile
 
 Automatically gives new (untitled) buffers a real filename and saves them to a
-configurable working folder. Sublime already keeps unsaved buffers in its session
-cache, but those tabs still have no real file on disk — so saving one prompts you
-for a name and location. AutoFile removes that friction: every new tab immediately
-becomes a real, named file in your working folder, so you can just keep typing and
-hit save (or rely on auto-save) without ever being prompted for a filename.
+configurable working folder. Every new tab immediately becomes a real, named file
+in your working folder, so you can just keep typing and hit save without ever
+being prompted for a filename.
 
 ### Features
-- Auto-names and saves every new tab (Ctrl+N) into a working folder
+- Auto-names and saves every new tab into a working folder
 - Configurable naming pattern, folder, and extension
 - Manual command + toggle via the Command Palette
 
@@ -31,28 +30,32 @@ hit save (or rely on auto-save) without ever being prompted for a filename.
 Default pattern: `note-%Y-%m-%d-###` → `note-2026-06-14-001.txt`
 
 ### Installation
-Copy the `AutoFile/` files into your Sublime Text **User** package folder:
 
-- Standard install: `%APPDATA%\Sublime Text\Packages\User`
-- Portable install: `<Sublime Text>\Data\Packages\User`
+Copy the `AutoFile/` files into your Sublime Text **Packages** folder:
 
-Files:
+| Platform | Path |
+|----------|------|
+| macOS    | `~/Library/Application Support/Sublime Text/Packages/AutoFile/` |
+| Windows  | `%APPDATA%\Sublime Text\Packages\AutoFile\` |
+| Linux    | `~/.config/sublime-text/Packages/AutoFile/` |
+
+Files to copy:
 - `AutoFile.py`
 - `AutoFile.sublime-settings`
 - `AutoFile.sublime-commands`
 
 ### Settings
-Command Palette (`Ctrl+Shift+P`) → **AutoFile: Open Settings**
+Command Palette → **AutoFile: Open Settings**
 
 ```json
 {
     "auto_create_on_new": true,
-    "working_folder": "D:\\Work\\Scratch",
+    "working_folder": "",
     "pattern": "note-%Y-%m-%d-###",
     "extension": ".txt"
 }
 ```
-Leave `working_folder` empty to use `<home>\AutoFile`.
+Leave `working_folder` empty to use `~/AutoFile` (macOS/Linux) or `%USERPROFILE%\AutoFile` (Windows).
 
 ### Commands (Command Palette)
 - **AutoFile: New Auto-Named File**
@@ -61,23 +64,30 @@ Leave `working_folder` empty to use `<home>\AutoFile`.
 
 ## CaseCycle
 
-Cycle the selected text through case styles with a single hotkey. Each press
-advances to the next style:
+Cycle the selected text through case styles with a single hotkey:
 
-`UPPERCASE` -> `lowercase` -> `lowerCamelCase` -> `UpperCamelCase` -> `original`
+`UPPERCASE` → `lowercase` → `Title Case` → `Sentence case` → `lowerCamelCase` → `UpperCamelCase` → `original`
 
 The original text is remembered, so repeated presses always return to the exact
 original. Works with multiple selections. With an empty selection it uses the word
-under the caret. Changing the selection restarts the cycle.
+under the caret.
 
 ### Hotkey
-Default: `Ctrl+Shift+M` (editable in `CaseCycle/Default (Windows).sublime-keymap`)
 
-### Command Palette
-- **Case: Cycle (UPPER / lower / camelCase / PascalCase / original)**
+| Platform | Key |
+|----------|-----|
+| macOS    | `⌘+Shift+M` |
+| Windows  | `Ctrl+Shift+M` |
 
 ### Installation
-Copy the `CaseCycle/` folder into your Sublime `Packages` directory
-(it is its own package, so its keymap won't clash with your User keymap):
-- Standard: `%APPDATA%\Sublime Text\Packages\CaseCycle`
-- Portable: `<Sublime Text>\Data\Packages\CaseCycle`
+
+Copy the `CaseCycle/` folder into your Sublime `Packages` directory:
+
+| Platform | Path |
+|----------|------|
+| macOS    | `~/Library/Application Support/Sublime Text/Packages/CaseCycle/` |
+| Windows  | `%APPDATA%\Sublime Text\Packages\CaseCycle\` |
+| Linux    | `~/.config/sublime-text/Packages/CaseCycle/` |
+
+### Command Palette
+- **Case: Cycle (UPPER / lower / Title / Sentence / camelCase / PascalCase / original)**
