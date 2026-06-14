@@ -1,0 +1,19 @@
+{
+    // Master switch: auto-create a named file whenever a new tab is opened
+    "auto_create_on_new": true,
+
+    // Folder where auto-named files are stored.
+    // Leave empty to use <your home folder>\AutoFile
+    // Example (Windows): "D:\\Work\\Scratch"
+    "working_folder": "",
+
+    // Naming pattern. Tokens:
+    //   %Y %y  year (4 / 2 digit)
+    //   %m %d  month / day
+    //   %H %M %S  hour / minute / second
+    //   #      sequence counter (### = 001, #### = 0001)
+    "pattern": "note-%Y-%m-%d-###",
+
+    // File extension (include the dot)
+    "extension": ".txt"
+}

@@ -1,0 +1,5 @@
+[
+    { "caption": "AutoFile: New Auto-Named File", "command": "autofile_new" },
+    { "caption": "AutoFile: Toggle Auto-Create on New File", "command": "autofile_toggle" },
+    { "caption": "AutoFile: Open Settings", "command": "autofile_open_settings" }
+]
