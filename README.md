@@ -4,8 +4,12 @@ Custom plugins for [Sublime Text](https://www.sublimetext.com/).
 
 ## AutoFile
 
-Automatically assigns a filename to new (untitled) buffers and saves them to a
-configurable working folder, so unsaved tabs are never lost when Sublime closes.
+Automatically gives new (untitled) buffers a real filename and saves them to a
+configurable working folder. Sublime already keeps unsaved buffers in its session
+cache, but those tabs still have no real file on disk — so saving one prompts you
+for a name and location. AutoFile removes that friction: every new tab immediately
+becomes a real, named file in your working folder, so you can just keep typing and
+hit save (or rely on auto-save) without ever being prompted for a filename.
 
 ### Features
 - Auto-names and saves every new tab (Ctrl+N) into a working folder
